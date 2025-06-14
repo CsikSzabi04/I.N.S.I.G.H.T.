@@ -268,7 +268,7 @@ const CyberOps = () => {
             description: 'Overall network performance and connectivity monitoring',
             stats: {
                 uptime: networkStatus?.uptime || '99.99%',
-                latency: networkStatus?.latency || '23ms'
+                latency: networkStatus?.latency || '20ms'
             }
         }
     ], [networkStatus]);

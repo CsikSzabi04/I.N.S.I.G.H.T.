@@ -139,7 +139,7 @@ export default function Contact() {
                 </div>
                 <div>
                   <h4 className="text-lg font-semibold text-white">Email</h4>
-                  <p className="text-slate-400">secure@insight-network.org</p>
+                  <p className="text-slate-400">insightcore.helpdesk@gmail.com</p>
                   <p className="text-sm text-slate-500 mt-1">Encrypted communication preferred</p>
                 </div>
               </div>
@@ -150,7 +150,7 @@ export default function Contact() {
                 </div>
                 <div>
                   <h4 className="text-lg font-semibold text-white">Phone</h4>
-                  <p className="text-slate-400">+1 (555) 238-9476</p>
+                  <p className="text-slate-400">+36 70 242 2586</p>
                   <p className="text-sm text-slate-500 mt-1">24/7 emergency response available</p>
                 </div>
               </div>
@@ -161,8 +161,8 @@ export default function Contact() {
                 </div>
                 <div>
                   <h4 className="text-lg font-semibold text-white">Headquarters</h4>
-                  <p className="text-slate-400">1250 Security Square, Suite 900</p>
-                  <p className="text-slate-400">Quantico, VA 22134</p>
+                  <p className="text-slate-400">6044 Fülöp Gergely utca 16</p>
+                  <p className="text-slate-400">kecskemét, Bács-Kiskun-Vármegye</p>
                   <p className="text-sm text-slate-500 mt-1">By appointment only</p>
                 </div>
               </div>

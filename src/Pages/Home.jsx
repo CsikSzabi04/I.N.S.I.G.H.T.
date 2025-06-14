@@ -53,10 +53,10 @@ export default function Home() {
     };
 
     const stats = [
-        { name: 'Cases Solved', value: '427', icon: ChartBarIcon, description: 'Successful investigations completed' },
+        { name: 'Cases Solved', value: '2', icon: ChartBarIcon, description: 'Successful investigations completed' },
         { name: 'Active Threats', value: intel.length, icon: ShieldExclamationIcon, description: 'Currently monitored threats' },
-        { name: 'Profiled Subjects', value: '1,892', icon: UserGroupIcon, description: 'Individuals in our database' },
-        { name: 'Patents Held', value: '23', icon: FingerPrintIcon, description: 'Proprietary technologies developed' }
+        { name: 'Profiled Subjects', value: '2', icon: UserGroupIcon, description: 'Individuals in our database' },
+        { name: 'Patents Held', value: '1', icon: FingerPrintIcon, description: 'Proprietary technologies developed' }
     ];
 
     const services = [

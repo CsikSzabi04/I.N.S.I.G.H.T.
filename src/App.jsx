@@ -4,6 +4,7 @@ import {
   Routes,
   Route,
   NavLink,
+  Link,
 } from "react-router-dom";
 
 import Home from "./Pages/Home";
@@ -13,8 +14,6 @@ import CaseStudies from "./Pages/CaseStudies";
 import CaseStudyDetail from "./Pages/CaseStudyDetail";
 import TechLab from "./Pages/TechLab";
 import Contact from "./Pages/Contact";
-import Profiles from "./Pages/Profiles";
-import Investigations from "./Pages/Investigations";
 import CyberOps from './Pages/CyberOps';
 
 function App() {
@@ -23,10 +22,8 @@ function App() {
   const navigation = [
     { path: "/", name: "Home" },
     { path: "/team", name: "Team" },
-    { path: "/profiles", name: "Profiles" },
     { path: "/services", name: "Services" },
     { path: "/casestudies", name: "Case Studies" },
-    { path: "/investigations", name: "Investigations" },
     { path: "/cyberops", name: "Cyber Ops" },
     { path: "/techlab", name: "Tech Lab" },
     { path: "/contact", name: "Contact" },
@@ -144,7 +141,6 @@ function App() {
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/team" element={<Team />} />
-            <Route path="/profiles" element={<Profiles />} />
             <Route path="/services" element={<Services />} />
 
             {/* Case Studies Routes */}
@@ -152,7 +148,6 @@ function App() {
             <Route path="/casestudies/all" element={<CaseStudies showAll={true} />} />
             <Route path="/casestudies/:caseId" element={<CaseStudyDetail />} />
 
-            <Route path="/investigations" element={<Investigations />} />
             <Route path="/cyberops" element={<CyberOps />} />
             <Route path="/techlab" element={<TechLab />} />
             <Route path="/contact" element={<Contact />} />
@@ -180,36 +175,42 @@ function App() {
                 </h3>
                 <ul className="space-y-2">
                   <li>
-                    <a
-                      href="#"
-                      className="text-gray-400 hover:text-white text-sm transition"
-                    >
-                      Threat Analysis
-                    </a>
+                    <Link to="/cyberops">
+                      <a
+                        href="#"
+                        className="text-gray-400 hover:text-white text-sm transition"
+                      >
+                        Threat Analysis
+                      </a>
+                    </Link>
+
                   </li>
                   <li>
-                    <a
+                    <Link to="/techlab"> <a
                       href="#"
                       className="text-gray-400 hover:text-white text-sm transition"
                     >
                       Digital Forensics
-                    </a>
+                    </a></Link>
+
                   </li>
                   <li>
-                    <a
+                    <Link to="/casestudies"> <a
                       href="#"
                       className="text-gray-400 hover:text-white text-sm transition"
                     >
                       Behavioral Profiling
-                    </a>
+                    </a></Link>
+
                   </li>
                   <li>
-                    <a
+                    <Link to="/cyberops"> <a
                       href="#"
                       className="text-gray-400 hover:text-white text-sm transition"
                     >
                       Network Security
-                    </a>
+                    </a></Link>
+
                   </li>
                 </ul>
               </div>
@@ -258,8 +259,8 @@ function App() {
                 <h3 className="text-lg font-semibold text-white mb-4">Contact</h3>
                 <address className="not-italic text-gray-400 text-sm leading-relaxed">
                   <p>24/7 Operations Center</p>
-                  <p className="mt-1">operations@insight-security.com</p>
-                  <p className="mt-1">+1 (555) 789-4560</p>
+                  <p className="mt-1">insightcore.helpdesk@gmail.com</p>
+                  <p className="mt-1">+36 70 242 1586</p>
                   <div className="flex space-x-5 mt-4">
                     <a
                       href="#"
@@ -310,7 +311,7 @@ function App() {
             </div>
 
             <div className="mt-12 pt-8 border-t border-gray-700 flex flex-col md:flex-row justify-between items-center text-gray-400 text-sm">
-              <p>&copy; {new Date().getFullYear()} I.N.S.I.G.H.T. All rights reserved.</p>
+              <p>&copy; {new Date().getFullYear()} I.N.S.I.G.H.T. </p>
               <div className="mt-4 md:mt-0 flex flex-wrap gap-6 md:gap-4 justify-center md:justify-start">
                 <a href="#" className="hover:text-white transition">
                   Privacy Policy

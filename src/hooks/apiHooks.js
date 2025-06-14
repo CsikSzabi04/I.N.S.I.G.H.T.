@@ -282,13 +282,18 @@ export function useNetworkStatus() {
     useEffect(() => {
         const fetchData = async () => {
             try {
-                const response = await axios.get(API_ENDPOINTS.NETWORK_STATUS);
-                setStatus(response.data);
+                // Use a real HTTP status endpoint to simulate network status
+                const response = await axios.get('https://httpstat.us/200');
+                setStatus({
+                    status: 'operational',
+                    threatsBlocked: Math.floor(Math.random() * 5000),
+                    lastIncident: '3 days ago'
+                });
             } catch (err) {
                 console.error('Error fetching network status:', err);
                 // Fallback mock data
                 setStatus({
-                    status: 'operational',
+                    status: 'degraded',
                     threatsBlocked: Math.floor(Math.random() * 1000),
                     lastIncident: '24 hours ago'
                 });
@@ -302,6 +307,7 @@ export function useNetworkStatus() {
 
     return { status, loading };
 }
+
 
 // Composite Hooks
 export function useLiveDashboard() {
