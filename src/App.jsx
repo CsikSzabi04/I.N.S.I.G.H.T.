@@ -10,11 +10,12 @@ import Home from "./Pages/Home";
 import Team from "./Pages/Team";
 import Services from "./Pages/Services";
 import CaseStudies from "./Pages/CaseStudies";
+import CaseStudyDetail from "./Pages/CaseStudyDetail";
 import TechLab from "./Pages/TechLab";
 import Contact from "./Pages/Contact";
 import Profiles from "./Pages/Profiles";
 import Investigations from "./Pages/Investigations";
-import CyberOps from "./Pages/CyberOps";
+import CyberOps from './Pages/CyberOps';
 
 function App() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -145,7 +146,12 @@ function App() {
             <Route path="/team" element={<Team />} />
             <Route path="/profiles" element={<Profiles />} />
             <Route path="/services" element={<Services />} />
+
+            {/* Case Studies Routes */}
             <Route path="/casestudies" element={<CaseStudies />} />
+            <Route path="/casestudies/all" element={<CaseStudies showAll={true} />} />
+            <Route path="/casestudies/:caseId" element={<CaseStudyDetail />} />
+
             <Route path="/investigations" element={<Investigations />} />
             <Route path="/cyberops" element={<CyberOps />} />
             <Route path="/techlab" element={<TechLab />} />
