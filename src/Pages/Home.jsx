@@ -99,24 +99,25 @@ export default function Home() {
                         </div>
 
                         <h1 className="text-5xl md:text-7xl font-extrabold tracking-tight mb-6">
-                            <span className="bg-clip-text text-transparent bg-gradient-to-r from-blue-400 to-purple-600">
+                            <span className="bg-clip-text text-transparent bg-gradient-to-r  from-slate-400 to-gray-600">
                                 I.N.S.I.G.H.T.
                             </span>
                         </h1>
 
                         <p className="text-xl md:text-2xl text-gray-300 mb-10 leading-relaxed max-w-4xl mx-auto">
-                           Integrated Network for Surveillance, Investigation, Grid Hacking & Thought‑mapping               </p>
+                            Integrated Network for Surveillance, Investigation, Grid Hacking & Thought‑mapping               </p>
 
                         <div className="flex flex-col sm:flex-row justify-center gap-5">
-                            <Link to="https://moonlit-sable-2990e8.netlify.app/" target='_blank'>       <motion.button
-                                whileHover={{ scale: 1.05 }}
-                                whileTap={{ scale: 0.95 }}
-                                onClick={handleConsultationClick}
-                                className="px-8 py-4 bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 rounded-lg font-semibold shadow-lg transition-all duration-300 flex items-center"
-                            >
-                                Open Your Folders
-                                <ArrowRightIcon className="ml-3 h-5 w-5" />
-                            </motion.button></Link>
+                            <Link to="https://moonlit-sable-2990e8.netlify.app/" target='_blank'>
+                                <motion.button
+                                    whileHover={{ scale: 1.05 }}
+                                    whileTap={{ scale: 0.95 }}
+                                    onClick={handleConsultationClick}
+                                    className="px-8 py-4  bg-gradient-to-r  from-slate-600 to-gray-700 hover:from-gray-700 hover:to-slate-800 rounded-lg font-semibold shadow-lg transition-all duration-300 flex items-center"
+                                >
+                                    Open Your Folders
+                                    <ArrowRightIcon className="ml-3 h-5 w-5" />
+                                </motion.button></Link>
 
 
                             <motion.button
@@ -205,19 +206,33 @@ export default function Home() {
             </section>
 
             {/* Methodology Section */}
-            <section className="py-24 px-4 sm:px-6 lg:px-8 bg-gradient-to-br from-gray-900 to-gray-800">
-                <div className="max-w-7xl mx-auto">
+            <section className="relative py-24 px-4 sm:px-6 lg:px-8 bg-gradient-to-br from-gray-900 to-gray-800 overflow-hidden">
+                {/* Rotated & Faded Background Image */}
+                <div className="absolute inset-0 pointer-events-none" aria-hidden="true">
+                    <div
+                        className="absolute right-0 top-0 w-2/3 h-full transform rotate-2 opacity-20"
+                        style={{
+                            backgroundImage: `url('https://images.stockcake.com/public/6/6/d/66d312c7-167e-4a8b-8deb-dabb9c6f8933_large/visual-data-processing-stockcake.jpg')`,
+                            backgroundSize: 'cover',
+                            backgroundPosition: 'center',
+                        }}
+                    />
+                </div>
+
+                {/* Section Content */}
+                <div className="relative max-w-7xl mx-auto">
                     <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+                        {/* Methodology Overview */}
                         <motion.div
                             initial={{ opacity: 0, x: -40 }}
                             whileInView={{ opacity: 1, x: 0 }}
                             viewport={{ once: true }}
                             transition={{ duration: 0.6 }}
                         >
-                            <h2 className="text-4xl font-bold mb-6 tracking-tight">
+                            <h2 className="text-4xl font-bold mb-6 tracking-tight text-white">
                                 Our <span className="text-blue-400">Methodology</span>
                             </h2>
-                            <p className="text-xl text-gray-400 mb-8 leading-relaxed">
+                            <p className="text-xl text-gray-300 mb-8 leading-relaxed">
                                 The I.N.S.I.G.H.T. framework combines multiple disciplines to create a comprehensive security approach:
                             </p>
 
@@ -254,13 +269,14 @@ export default function Home() {
 
                             <button
                                 onClick={handleMethodologyClick}
-                                className="mt-10 inline-flex items-center px-8 py-4 bg-gradient-to-r from-blue-600 to-purple-600 text-white rounded-lg font-semibold hover:from-blue-700 hover:to-purple-700 transition shadow-lg"
+                                className="mt-10 inline-flex items-center px-8 py-4 bg-gradient-to-r from-slate-600 to-gray-700 hover:from-gray-700 hover:to-slate-800 text-white rounded-lg font-semibold transition shadow-lg"
                             >
                                 Download Methodology Whitepaper
                                 <ArrowRightIcon className="ml-3 h-5 w-5" />
                             </button>
                         </motion.div>
 
+                        {/* Threat Brief Panel */}
                         <motion.div
                             initial={{ opacity: 0, x: 40 }}
                             whileInView={{ opacity: 1, x: 0 }}
@@ -268,23 +284,25 @@ export default function Home() {
                             transition={{ duration: 0.6 }}
                             className="bg-gray-800 rounded-2xl p-8 shadow-2xl border border-gray-700"
                         >
-                            <h3 className="text-2xl font-bold mb-6">Current Threat Brief</h3>
+                            <h3 className="text-2xl font-bold mb-6 text-white">Current Threat Brief</h3>
                             <div className="space-y-4">
                                 {intel.slice(0, 3).map((threat, index) => (
                                     <div key={index} className="p-5 bg-gray-700/50 rounded-xl border border-gray-600 shadow-inner hover:border-blue-500 transition">
                                         <div className="flex justify-between items-start">
-                                            <h4 className="font-semibold text-lg">{threat.name || 'Unknown Threat'}</h4>
-                                            <span className={`text-xs px-3 py-1 rounded-full font-semibold uppercase tracking-wide ${threat.severity === 'critical'
+                                            <h4 className="font-semibold text-lg text-white">{threat.name || 'Unknown Threat'}</h4>
+                                            <span
+                                                className={`text-xs px-3 py-1 rounded-full font-semibold uppercase tracking-wide ${threat.severity === 'critical'
                                                     ? 'bg-red-900/70 text-red-300'
                                                     : threat.severity === 'high'
                                                         ? 'bg-orange-900/70 text-orange-300'
                                                         : 'bg-yellow-900/70 text-yellow-300'
-                                                }`}>
+                                                    }`}
+                                            >
                                                 {threat.type || 'Malware'}
                                             </span>
                                         </div>
-                                        <p className="text-sm text-gray-400 mt-3">{threat.description || 'New threat detected in wild'}</p>
-                                        <div className="mt-3 flex justify-between items-center text-xs text-gray-500">
+                                        <p className="text-sm text-gray-300 mt-3">{threat.description || 'New threat detected in wild'}</p>
+                                        <div className="mt-3 flex justify-between items-center text-xs text-gray-400">
                                             <span>First detected: {threat.date || 'Unknown'}</span>
                                             <span>Confidence: {threat.confidence || '--'}%</span>
                                         </div>
@@ -292,11 +310,12 @@ export default function Home() {
                                 ))}
                             </div>
 
+                            {/* Global Threat Level */}
                             <div className="mt-8 p-6 bg-gray-700 rounded-xl border border-gray-600 shadow-inner">
                                 <div className="flex items-center justify-between">
                                     <div>
-                                        <h4 className="font-semibold text-lg">Global Threat Level</h4>
-                                        <p className="text-sm text-gray-400 mt-1">
+                                        <h4 className="font-semibold text-lg text-white">Global Threat Level</h4>
+                                        <p className="text-sm text-gray-300 mt-1">
                                             {cyberScore && cyberScore > 70
                                                 ? 'Elevated threat level - increased monitoring recommended'
                                                 : cyberScore && cyberScore > 40
@@ -309,8 +328,8 @@ export default function Home() {
                                             <svg className="w-full h-full" viewBox="0 0 36 36">
                                                 <path
                                                     d="M18 2.0845
-                            a 15.9155 15.9155 0 0 1 0 31.831
-                            a 15.9155 15.9155 0 0 1 0 -31.831"
+                      a 15.9155 15.9155 0 0 1 0 31.831
+                      a 15.9155 15.9155 0 0 1 0 -31.831"
                                                     fill="none"
                                                     stroke="#1E293B"
                                                     strokeWidth="3"
@@ -318,7 +337,7 @@ export default function Home() {
                                                 />
                                             </svg>
                                             <div className="absolute top-0 left-0 w-full h-full flex items-center justify-center">
-                                                <p className="text-2xl font-extrabold">{cyberScore || '--'}</p>
+                                                <p className="text-2xl font-extrabold text-white">{cyberScore || '--'}</p>
                                             </div>
                                         </div>
                                         <p className="text-xs text-gray-400 tracking-widest mt-1">GLOBAL RISK INDEX</p>
@@ -329,6 +348,7 @@ export default function Home() {
                     </div>
                 </div>
             </section>
+
 
             {/* Case Studies */}
             <section className="py-24 px-4 sm:px-6 lg:px-8 bg-gray-900">
@@ -364,10 +384,10 @@ export default function Home() {
                                     <div className="flex justify-between items-start mb-3">
                                         <h3 className="text-xl font-semibold">{caseItem.title}</h3>
                                         <span className={`text-xs px-3 py-1 rounded-full font-medium tracking-wide ${caseItem.status === 'Closed'
-                                                ? 'bg-green-900/50 text-green-300'
-                                                : caseItem.status === 'Active'
-                                                    ? 'bg-blue-900/50 text-blue-300'
-                                                    : 'bg-gray-700 text-gray-300'
+                                            ? 'bg-green-900/50 text-green-300'
+                                            : caseItem.status === 'Active'
+                                                ? 'bg-blue-900/50 text-blue-300'
+                                                : 'bg-gray-700 text-gray-300'
                                             }`}>
                                             {caseItem.status || 'Active'}
                                         </span>
@@ -406,38 +426,59 @@ export default function Home() {
                 </div>
             </section>
 
+
             {/* Testimonials */}
-            <section className="py-24 px-4 sm:px-6 lg:px-8 bg-gray-800">
-                <div className="max-w-7xl mx-auto">
+            <section className="relative py-24 px-4 sm:px-6 lg:px-8 bg-gray-800 overflow-hidden">
+                {/* Rotated Background Image */}
+                <div className="absolute inset-0 w-full h-full" aria-hidden="true">
+                    <div
+                        className="absolute top-0 right-0 w-2/3 h-full transform rotate-1 opacity-20"
+                        style={{
+                            backgroundImage: `url('https://images.stockcake.com/public/8/5/8/8581e994-8d4e-4bab-8d82-07f40f947147_large/flow-of-relationships-stockcake.jpg')`,
+                            backgroundSize: 'cover',
+                            backgroundPosition: 'center',
+                        }}
+                    />
+                </div>
+
+                {/* Content */}
+                <div className="relative max-w-7xl mx-auto">
                     <div className="text-center mb-16">
-                        <h2 className="text-4xl font-extrabold mb-4 tracking-tight">
+                        <h2 className="text-4xl font-extrabold text-white mb-4 tracking-tight">
                             Client <span className="text-blue-400">Testimonials</span>
                         </h2>
-                        <p className="text-xl text-gray-400 max-w-3xl mx-auto">
+                        <p className="text-xl text-gray-300 max-w-3xl mx-auto">
                             What our government and corporate partners say about our services.
                         </p>
                     </div>
 
+                    {/* Testimonials Grid */}
                     <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
                         {[
                             {
-                                quote: "I.N.S.I.G.H.T.'s behavioral analysis helped us prevent a major security breach before it happened. Their predictive models are unmatched.",
+                                quote:
+                                    "I.N.S.I.G.H.T.'s behavioral analysis helped us prevent a major security breach before it happened. Their predictive models are unmatched.",
                                 author: "Sarah Johnson",
                                 position: "Chief Security Officer, Fortune 500 Company",
-                                avatar: "https://randomuser.me/api/portraits/women/44.jpg"
+                                avatar: "https://randomuser.me/api/portraits/women/44.jpg",
+                                stars: 4,
                             },
                             {
-                                quote: "The digital forensics team uncovered evidence that was critical to our investigation. Their attention to detail is exceptional.",
+                                quote:
+                                    "The digital forensics team uncovered evidence that was critical to our investigation. Their attention to detail is exceptional.",
                                 author: "Michael Chen",
                                 position: "Federal Investigator",
-                                avatar: "https://randomuser.me/api/portraits/men/32.jpg"
+                                avatar: "https://randomuser.me/api/portraits/men/32.jpg",
+                                stars: 5,
                             },
                             {
-                                quote: "Working with I.N.S.I.G.H.T. has transformed our approach to threat intelligence. Their insights have become invaluable to our operations.",
+                                quote:
+                                    "Working with I.N.S.I.G.H.T. has transformed our approach to threat intelligence. Their insights have become invaluable to our operations.",
                                 author: "David Rodriguez",
                                 position: "Director of National Security",
-                                avatar: "https://randomuser.me/api/portraits/men/75.jpg"
-                            }
+                                avatar: "https://randomuser.me/api/portraits/men/75.jpg",
+                                stars: 4,
+                            },
                         ].map((testimonial, index) => (
                             <motion.div
                                 key={index}
@@ -445,12 +486,19 @@ export default function Home() {
                                 whileInView={{ opacity: 1, y: 0 }}
                                 viewport={{ once: true }}
                                 transition={{ delay: index * 0.2 }}
-                                className="bg-gray-700/50 rounded-2xl p-8 border border-gray-600 hover:border-blue-500 transition"
+                                className="bg-gray-900/80 rounded-2xl p-8 border border-gray-700 hover:border-blue-500 transition"
                             >
-                                <div className="mb-6">
-                                    <svg className="w-8 h-8 text-yellow-400" fill="currentColor" viewBox="0 0 20 20">
-                                        <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
-                                    </svg>
+                                <div className="mb-4 flex space-x-1">
+                                    {[...Array(5)].map((_, i) => (
+                                        <svg
+                                            key={i}
+                                            className={`w-6 h-6 ${i < testimonial.stars ? 'text-yellow-400' : 'text-gray-600'}`}
+                                            fill="currentColor"
+                                            viewBox="0 0 20 20"
+                                        >
+                                            <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                                        </svg>
+                                    ))}
                                 </div>
                                 <blockquote className="text-lg text-gray-300 mb-8">
                                     "{testimonial.quote}"
@@ -468,38 +516,6 @@ export default function Home() {
                                 </div>
                             </motion.div>
                         ))}
-                    </div>
-                </div>
-            </section>
-
-            {/* CTA Section */}
-            <section className="py-24 px-4 sm:px-6 lg:px-8 bg-gradient-to-r from-blue-900/70 to-purple-900/70">
-                <div className="max-w-4xl mx-auto text-center">
-                    <h2 className="text-4xl font-extrabold mb-6 tracking-tight">
-                        Ready to <span className="text-blue-300">Enhance</span> Your Security Posture?
-                    </h2>
-                    <p className="text-xl text-gray-300 mb-10 leading-relaxed max-w-3xl mx-auto">
-                        Contact our team of experts to discuss your organization's specific security needs and challenges.
-                    </p>
-                    <div className="flex flex-col sm:flex-row justify-center gap-5">
-                        <motion.button
-                            whileHover={{ scale: 1.05 }}
-                            whileTap={{ scale: 0.95 }}
-                            onClick={handleScheduleConsultation}
-                            className="px-8 py-4 bg-white text-gray-900 hover:bg-gray-100 rounded-lg font-semibold shadow-lg transition-all duration-300 flex items-center justify-center"
-                        >
-                            Schedule Consultation
-                            <ArrowRightIcon className="ml-3 h-5 w-5" />
-                        </motion.button>
-
-                        <motion.button
-                            whileHover={{ scale: 1.05 }}
-                            whileTap={{ scale: 0.95 }}
-                            onClick={handleEmergencyContact}
-                            className="px-8 py-4 border-2 border-white text-white hover:bg-white/10 rounded-lg font-semibold transition-all duration-300"
-                        >
-                            Emergency Contact
-                        </motion.button>
                     </div>
                 </div>
             </section>

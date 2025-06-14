@@ -44,7 +44,7 @@ function App() {
                 className="flex items-center space-x-2"
                 onClick={() => setMobileMenuOpen(false)}
               >
-                <div className="bg-gradient-to-r from-blue-600 to-purple-700 p-2 rounded-md shadow-lg transform transition-transform duration-300 hover:rotate-3">
+                <div className="bg-gradient-to-r bg-gradient-to-r  from-slate-600 to-gray-700 p-2 rounded-md shadow-lg transform transition-transform duration-300 hover:rotate-3">
                   <span className="text-white font-extrabold text-2xl tracking-wide select-none">
                     I.N.S.I.G.H.T.
                   </span>
@@ -59,7 +59,7 @@ function App() {
                     to={path}
                     className={({ isActive }) =>
                       `text-sm font-medium px-3 py-2 rounded-md transition-colors duration-200 ${isActive
-                        ? "bg-blue-600 text-white shadow-md"
+                        ? " bg-gradient-to-r  from-slate-600 to-gray-700 text-white shadow-md"
                         : "text-gray-300 hover:bg-gray-800 hover:text-white"
                       }`
                     }
