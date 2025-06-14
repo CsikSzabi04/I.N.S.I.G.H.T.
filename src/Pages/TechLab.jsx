@@ -4,7 +4,7 @@ import { motion } from 'framer-motion';
 export default function TechLab() {
   return (
     <section
-      className="h-[500px] bg-cover bg-center relative p-8"
+      className="h-[600px] bg-cover bg-center relative p-8"
     >
       <div className="absolute inset-0 bg-black bg-opacity-70 bg-[url('https://images.stockcake.com/public/d/2/1/d2100fa9-77af-42ff-91ba-4a67ff69de27_large/magnifying-fingerprints-investigation-stockcake.jpg')] bg-cover bg-center opacity-30" />
       <motion.div

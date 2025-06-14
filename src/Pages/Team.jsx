@@ -14,9 +14,9 @@ const teamMembers = [
     id: 1,
     name: 'Dr. Alexander Sz. Csík',
     role: 'Lead Profiler',
-    specialty: 'Behavioral Analysis',
+    specialty: 'Behavioral Analysis |  Network Operations and Cybersecurity ',
     icon: FingerPrintIcon,
-    description: 'Top student in Ethical Hacking and Software Development at Neuman; background in criminal psychology and expertise in micro-expressions'
+    description: 'Top student in Ethical Hacking and Software Development at Neuman, background in criminal psychology and expertise in micro-expressions'
   },
   {
     id: 2,
@@ -28,35 +28,35 @@ const teamMembers = [
   },
   {
     id: 3,
-    name: 'Kai Chen',
+    name: 'Professor Nándor Molnár',
     role: 'IT Specialist',
-    specialty: 'Cyber Forensics',
+    specialty: 'Security and Administration Track | Sofware Developer',
     icon: CodeBracketIcon,
-    description: 'White hat hacker specializing in digital footprint analysis.'
+    description: 'Top student in Software Development and -Testing at Neuman, second best at profiling and reading peoples, networking & protection'
   },
   {
     id: 4,
-    name: 'Sarah Dawson',
+    name: '?',
     role: 'Legal Consultant',
     specialty: 'Criminal Law',
     icon: ScaleIcon,
-    description: 'Former prosecutor with expertise in evidentiary procedure.'
+    description: '?'
   },
   {
     id: 5,
-    name: 'Jason Gideon',
+    name: '?',
     role: 'Senior Profiler',
     specialty: 'Threat Assessment',
     icon: UserIcon,
-    description: 'Legendary profiler with unmatched case resolution rate.'
+    description: '?'
   },
   {
     id: 6,
-    name: 'Nina Sharpe',
+    name: '?',
     role: 'Consultant',
     specialty: 'Criminal Networks',
     icon: LightBulbIcon,
-    description: 'Strategist with deep knowledge of organized crime structures.'
+    description: '?'
   }
 ];
 

@@ -1,9 +1,9 @@
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
-import { 
-  EnvelopeIcon, 
-  PhoneIcon, 
-  MapPinIcon, 
+import {
+  EnvelopeIcon,
+  PhoneIcon,
+  MapPinIcon,
   ClockIcon,
 } from '@heroicons/react/24/outline';
 
@@ -37,12 +37,24 @@ export default function Contact() {
   };
 
   return (
-    <section className="container py-12 ml-10">
+     <section className="relative py-24 px-4 sm:px-6 lg:px-8 bg-gradient-to-br from-gray-900 to-gray-800 overflow-hidden">
+                {/* Rotated & Faded Background Image */}
+                <div className="absolute inset-0 pointer-events-none" aria-hidden="true">
+                    <div
+                        className="absolute right-0 top-0 w-3/3 h-full transform rotate-5 opacity-20"
+                        style={{
+                            backgroundImage: `url('https://images.stockcake.com/public/c/a/1/ca16c042-6841-494d-98ee-e81255bec8a2_large/neon-email-icon-stockcake.jpg')`,
+                            backgroundSize: 'cover',
+                            backgroundPosition: 'center',
+                        }}
+                    />
+                </div>
+
       <h1 className="section-title">Contact Our Team</h1>
       <p className="section-subtitle">
         Confidential inquiries handled with discretion
       </p>
-      
+
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
         <motion.div
           initial={{ opacity: 0, x: -20 }}
@@ -50,7 +62,7 @@ export default function Contact() {
           className="bg-slate-800 rounded-lg p-8 shadow-lg"
         >
           <h3 className="text-2xl font-bold text-white mb-6">Send a Secure Message</h3>
-          
+
           <form onSubmit={handleSubmit} className="space-y-6">
             <div>
               <label htmlFor="name" className="block text-sm font-medium text-slate-400 mb-1">
@@ -66,7 +78,7 @@ export default function Contact() {
                 className="w-full px-4 py-2 bg-slate-700 border border-slate-600 rounded-md text-white focus:outline-none focus:ring-2 focus:ring-primary"
               />
             </div>
-            
+
             <div>
               <label htmlFor="email" className="block text-sm font-medium text-slate-400 mb-1">
                 Contact Email
@@ -81,7 +93,7 @@ export default function Contact() {
                 className="w-full px-4 py-2 bg-slate-700 border border-slate-600 rounded-md text-white focus:outline-none focus:ring-2 focus:ring-primary"
               />
             </div>
-            
+
             <div>
               <label htmlFor="caseType" className="block text-sm font-medium text-slate-400 mb-1">
                 Inquiry Type
@@ -99,7 +111,7 @@ export default function Contact() {
                 <option value="other">Other</option>
               </select>
             </div>
-            
+
             <div>
               <label htmlFor="message" className="block text-sm font-medium text-slate-400 mb-1">
                 Message
@@ -114,7 +126,7 @@ export default function Contact() {
                 className="w-full px-4 py-2 bg-slate-700 border border-slate-600 rounded-md text-white focus:outline-none focus:ring-2 focus:ring-primary"
               />
             </div>
-            
+
             <button
               type="submit"
               className="w-full py-3 px-4 bg-primary hover:bg-primary-dark rounded-md text-white font-medium transition-colors"
@@ -123,7 +135,7 @@ export default function Contact() {
             </button>
           </form>
         </motion.div>
-        
+
         <motion.div
           initial={{ opacity: 0, x: 20 }}
           animate={{ opacity: 1, x: 0 }}
@@ -131,7 +143,7 @@ export default function Contact() {
         >
           <div className="bg-slate-800 rounded-lg p-8 shadow-lg">
             <h3 className="text-2xl font-bold text-white mb-6">Contact Information</h3>
-            
+
             <div className="space-y-6">
               <div className="flex items-start space-x-4">
                 <div className="p-3 rounded-full bg-slate-700">
@@ -143,7 +155,7 @@ export default function Contact() {
                   <p className="text-sm text-slate-500 mt-1">Encrypted communication preferred</p>
                 </div>
               </div>
-              
+
               <div className="flex items-start space-x-4">
                 <div className="p-3 rounded-full bg-slate-700">
                   <PhoneIcon className="h-6 w-6 text-primary" />
@@ -154,7 +166,7 @@ export default function Contact() {
                   <p className="text-sm text-slate-500 mt-1">24/7 emergency response available</p>
                 </div>
               </div>
-              
+
               <div className="flex items-start space-x-4">
                 <div className="p-3 rounded-full bg-slate-700">
                   <MapPinIcon className="h-6 w-6 text-primary" />
@@ -166,7 +178,7 @@ export default function Contact() {
                   <p className="text-sm text-slate-500 mt-1">By appointment only</p>
                 </div>
               </div>
-              
+
               <div className="flex items-start space-x-4">
                 <div className="p-3 rounded-full bg-slate-700">
                   <ClockIcon className="h-6 w-6 text-primary" />
@@ -179,7 +191,7 @@ export default function Contact() {
               </div>
             </div>
           </div>
-          
+
           <div className="bg-slate-800 rounded-lg p-8 shadow-lg">
             <h3 className="text-2xl font-bold text-white mb-6">Secure Drop</h3>
             <p className="text-slate-400 mb-4">
