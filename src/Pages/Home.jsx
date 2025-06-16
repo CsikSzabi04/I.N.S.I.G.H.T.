@@ -108,7 +108,7 @@ export default function Home() {
                             Integrated Network for Surveillance, Investigation, Grid Hacking & Thought‑mapping               </p>
 
                         <div className="flex flex-col sm:flex-row justify-center gap-5">
-                            <Link to="https://moonlit-sable-2990e8.netlify.app/" target='_blank'>
+                            <Link to="https://visionboardapp.netlify.app/" target='_blank'>
                                 <motion.button
                                     whileHover={{ scale: 1.05 }}
                                     whileTap={{ scale: 0.95 }}
